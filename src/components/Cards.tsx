@@ -75,7 +75,7 @@ export default function Cards({
     }
     setColorsArray(newColors);
   };
-
+  console.log({ colorsArray });
   const handleCardClick = (e: any) => {
     const hexCode = e.currentTarget.dataset.color;
     const array = [...colorsArray];
