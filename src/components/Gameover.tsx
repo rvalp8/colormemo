@@ -12,10 +12,10 @@ export default function GameOver({highestScore, overlayStyle, modalStyle, resetG
     return (
         <div id="overlay" style={overlayStyle}>
             <div id="game-over-modal" style={modalStyle}>
-                <h2>You lost...</h2>
-                <h3>Higherst Score: {highestScore}</h3>
-                <p>You clicked the same colour twice.</p>
-                <button onClick={resetGame}>Try Again</button>
+                <h2>Game Berakhir:</h2>
+                <h3>Nilai Tertinggi: {highestScore}</h3>
+                <p>Anda telah memilih warna yang sama.</p>
+                <button onClick={resetGame}>Coba Lagi</button>
             </div>
         </div>
     )
