@@ -53,8 +53,6 @@ export default function Cards({
     let newColors: any[] = [];
     const previousRGBs: any[] = [];
 
-    //alert(`Warna yang Terpilih: `);
-
     for (let i = 0; i < level + 3; i++) {
       let r = randomBetween(0, 254);
       let g = randomBetween(0, 254);
