@@ -52,6 +52,9 @@ export default function Cards({
   const generateColorsArray = async (level: number) => {
     let newColors: any[] = [];
     const previousRGBs: any[] = [];
+
+    //alert(`Warna yang Terpilih: `);
+
     for (let i = 0; i < level + 3; i++) {
       let r = randomBetween(0, 254);
       let g = randomBetween(0, 254);
@@ -82,8 +85,10 @@ export default function Cards({
     array.map((color) => {
       if (color.hex === hexCode) {
         if (color.isClicked) {
+          alert(`Kamu memilih warna ${color.name} (${color.hex})`);
           setGameState("game over");
         } else {
+          alert(`Kamu memilih warna ${color.name} (${color.hex})`);
           color.isClicked = true;
           setScore(score + 1);
         }
