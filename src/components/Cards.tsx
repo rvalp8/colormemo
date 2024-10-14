@@ -85,10 +85,10 @@ export default function Cards({
     array.map((color) => {
       if (color.hex === hexCode) {
         if (color.isClicked) {
-          alert(`Kamu memilih warna ${color.name} (${color.hex})`);
+          alert(`Kamu jelek ${color.name} (${color.hex})`);
           setGameState("game over");
         } else {
-          alert(`Kamu memilih warna ${color.name} (${color.hex})`);
+          alert(`Kamu bagus ${color.name} (${color.hex})`);
           color.isClicked = true;
           setScore(score + 1);
         }
@@ -106,7 +106,7 @@ export default function Cards({
         return false;
       }
     }
-    return false;
+    return false; 
   };
 
   useEffect(() => {
