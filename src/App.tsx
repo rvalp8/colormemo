@@ -23,6 +23,7 @@ function App() {
   const [gameState, setGameState] = useState("");
   const [score, setScore] = useState(0);
   const [highestScore, setHighestScore] = useState(0);
+  const [lose, setLose] = useState(0);
 
   useEffect(() => {
     if (gameState === "next level") {
@@ -35,6 +36,8 @@ function App() {
 
   useEffect(() => {
     if (gameState === "game over") {
+      setLose(lose + 1);
+
       overlayStyle = {
         opacity: "100%",
       };
@@ -71,7 +74,7 @@ function App() {
     <>
       <header>
         <Title />
-        <Stats level={level} score={score} highestScore={highestScore} />
+        <Stats level={level} score={score} highestScore={highestScore} lose={lose} />
       </header>
       <main>
         <Cards
