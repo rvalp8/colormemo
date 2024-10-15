@@ -18,12 +18,16 @@ let modalStyle = {
   transform: "translate(0%, 0%)",
 };
 
+let highestScores = [0];
+highestScores.length = 0
+
 function App() {
   const [level, setLevel] = useState(1);
   const [gameState, setGameState] = useState("");
   const [score, setScore] = useState(0);
   const [highestScore, setHighestScore] = useState(0);
   const [lose, setLose] = useState(0);
+  const [averageHighestScore, setAverageHighestScore] = useState(0);
 
   useEffect(() => {
     if (gameState === "next level") {
@@ -37,6 +41,13 @@ function App() {
   useEffect(() => {
     if (gameState === "game over") {
       setLose(lose + 1);
+      if (score > highestScore) {
+        highestScores.push(score);
+
+        const sumOfScores = highestScores.reduce((accumulator, score) => accumulator + score, 0)
+        setAverageHighestScore(parseFloat((sumOfScores / highestScores.length).toString()));
+        setHighestScore(score);
+      }
 
       overlayStyle = {
         opacity: "100%",
@@ -58,12 +69,6 @@ function App() {
     };
   }, [gameState]);
 
-  useEffect(() => {
-    if (score > highestScore) {
-      setHighestScore(score);
-    }
-  }, [score, highestScore]);
-
   const resetGame = () => {
     setGameState("new game");
     setScore(0);
@@ -74,7 +79,7 @@ function App() {
     <>
       <header>
         <Title />
-        <Stats level={level} score={score} highestScore={highestScore} lose={lose} />
+        <Stats level={level} score={score} highestScore={highestScore} lose={lose} averageHighestScore={averageHighestScore}/>
       </header>
       <main>
         <Cards

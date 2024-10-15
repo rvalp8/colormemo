@@ -85,6 +85,7 @@ export default function Cards({
         if (color.isClicked) {
           alert(`Kamu memilih warna ${color.name} (${color.hex})`);
           setGameState("game over");
+          
         } else {
           alert(`Kamu memilih warna ${color.name} (${color.hex})`);
           color.isClicked = true;
