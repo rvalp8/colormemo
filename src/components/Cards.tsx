@@ -53,7 +53,7 @@ export default function Cards({
     let newColors: any[] = [];
     const previousRGBs: any[] = [];
 
-    for (let i = 0; i < level + 3; i++) {
+    for (let i = 0; i < randomBetween(4, 10); i++) {
       let r = randomBetween(0, 254);
       let g = randomBetween(0, 254);
       let b = randomBetween(0, 254);
