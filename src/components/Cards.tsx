@@ -105,7 +105,7 @@ export default function Cards({
         return false;
       }
     }
-    return true;
+    return false; 
   };
 
   useEffect(() => {
