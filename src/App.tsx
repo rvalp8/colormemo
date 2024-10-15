@@ -25,9 +25,11 @@ function App() {
   const [level, setLevel] = useState(1);
   const [gameState, setGameState] = useState("");
   const [score, setScore] = useState(0);
-  const [highestScore, setHighestScore] = useState(0);
+  const [highestScore, setHighestScore] = useState(0
+  );
   const [lose, setLose] = useState(0);
-  const [averageHighestScore, setAverageHighestScore] = useState(0);
+  const [averageHighestScore, setAverageHighestScore] = useState
+  (0);
 
   useEffect(() => {
     if (gameState === "next level") {
